@@ -1,0 +1,10 @@
+[build]
+rustflags = ["-Dclippy::pedantic", "-Dwarnings", "-Dmissing_docs"]
+rustdocflags = [
+    "-Dwarnings",
+    "--document-private-items",
+    "-Arustdoc::private_intra_doc_links",
+]
+
+[registries.crates-io]
+protocol = "sparse"
