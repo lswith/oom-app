@@ -1,3 +1,5 @@
+//! An app which will try and consume large amount of memory on startup.
+//! This app is used to test our resource usage limits.
 use std::{
     env,
     sync::{Arc, Mutex},
@@ -39,8 +41,8 @@ async fn main() {
 
 const KILOBYTES: usize = 1024;
 const MEGABYTES: usize = 1024 * KILOBYTES;
-const GIGABYTES: usize = 1024 * MEGABYTES;
 
+#[allow(clippy::unused_async)]
 async fn handler(State(state): State<Arc<Mutex<Vec<u8>>>>) -> String {
     {
         let mut newdata: Vec<u8> = vec![u8::MAX; 100 * MEGABYTES];
