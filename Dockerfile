@@ -18,4 +18,4 @@ ENV CARGO_BUILD_RUSTFLAGS="-Dwarnings"
 RUN cargo build --release 
 RUN cargo install --path .
 
-CMD ["/rust/oom-app"]
+CMD ["/usr/local/cargo/bin/oom-app"]
