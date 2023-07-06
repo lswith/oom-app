@@ -16,6 +16,6 @@ FROM deps AS builder
 COPY . /rust
 ENV CARGO_BUILD_RUSTFLAGS="-Dwarnings"
 RUN cargo build --release 
-RUN cargo install --path .
+RUN cargo install --profile release --path .
 
 CMD ["/usr/local/cargo/bin/oom-app"]
